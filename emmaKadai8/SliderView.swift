@@ -11,9 +11,9 @@ struct SliderView: View {
     //スライダーの値
     @Binding var sliderValue: Float
     //Tab画面ごとの値
-    var tabLabel: String = "画面1"
-    var tabHeaderColor: Color = Color("Tab1HeaderColor")
-    var tabBodyColor: Color = Color("Tab1BodyColor")
+    let tabLabel: String
+    let tabHeaderColor: Color
+    let tabBodyColor: Color
 
     var body: some View {
         NavigationStack{
@@ -75,7 +75,10 @@ struct SliderView: View {
 struct SliderView_Previews: PreviewProvider {
     static var previews: some View {
         SliderView(
-            sliderValue: Binding.constant(0)
+            sliderValue: Binding.constant(0),
+            tabLabel: "画面1",
+            tabHeaderColor: Color("Tab1HeaderColor"),
+            tabBodyColor: Color("Tab1BodyColor")
         )
     }
 }
